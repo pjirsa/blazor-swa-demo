@@ -1,1 +1,5 @@
 GET https://pjweather.azurewebsites.net/api/WeatherForecast
+
+###
+
+GET https://kind-mushroom-079693010.2.azurestaticapps.net/api/WeatherForecast

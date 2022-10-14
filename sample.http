@@ -1,3 +1,9 @@
 GET https://pjweather.azurewebsites.net/api/WeatherForecast
 
 ###
+
+GET https://lemon-field-0478caf10.2.azurestaticapps.net/api/WeatherForecast
+
+###
+
+GET https://black-field-01e97ce10.2.azurestaticapps.net/api/WeatherForecast

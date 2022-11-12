@@ -37,6 +37,8 @@ namespace BlazorApp.Api
             [HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = null)] HttpRequest req,
             ILogger log)
         {
+            var userInfo = StaticWebAppsAuth.Parse(req);
+
             var randomNumber = new Random();
             var temp = 0;
 
@@ -44,7 +46,8 @@ namespace BlazorApp.Api
             {
                 Date = DateTime.Now.AddDays(index),
                 TemperatureC = temp = randomNumber.Next(-20, 55),
-                Summary = GetSummary(temp)
+                Summary = GetSummary(temp),
+                RequestedBy = userInfo.Identity?.Name
             }).ToArray();
 
             return new OkObjectResult(result);
